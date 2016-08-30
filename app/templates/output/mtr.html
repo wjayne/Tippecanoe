@@ -1,0 +1,67 @@
+<!--Single tenant retail-->
+{% extends "layout.html" %}
+{% block content %}
+<h1> Multi Tenant Retail </h1>
+
+			<h3>Basic Property Info</h3>
+			<table border="1">
+			{% for attr in info %}
+			<tr>
+				<td id="col1"> {{ attr.column }} </td>
+				<td> {{ attr.value }} </td>
+			</tr>
+			{% endfor %}
+			</table>
+			<br>
+
+      <h3>Revenue</h3>
+			<table border="1">
+			{% for attr in revenue %}
+			<tr>
+				<td id="col1"> {{ attr.column }} </td>
+				<td> {{ attr.value }} </td>
+			</tr>
+			{% endfor %}
+			</table>
+			<br>
+
+      <h3>Expenses</h3>
+			<table border="1">
+			{% for attr in expenses %}
+			<tr>
+				<td id="col1"> {{ attr.column }} </td>
+				<td> {{ attr.value }} </td>
+			</tr>
+			{% endfor %}
+			</table>
+			<br>
+
+      <h3>NOI</h3>
+      <table border="1">
+        <tr>
+          <td id="col1">NOI</td>
+          <td>${{ NOI }}</td>
+        <tr>
+      </table>
+
+      <h3>Capitalization Rate</h3>
+      <table border="1">
+      {% for attr in cap_rate %}
+      <tr>
+        <td id="col1"> {{ attr.column }} </td>
+        <td> {{ attr.value }} </td>
+      </tr>
+      {% endfor %}
+      </table>
+
+      <h3>Results</h3>
+			<table border="1">
+			{% for attr in result %}
+			<tr>
+				<td id="col1"> {{ attr.column }} </td>
+				<td> {{ attr.value }} </td>
+			</tr>
+			{% endfor %}
+			</table>
+		</h3>
+{% endblock %}

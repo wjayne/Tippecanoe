@@ -1,0 +1,53 @@
+body{
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+}
+h1{
+  color: blue ;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+}
+
+h3{
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+}
+
+#col1{
+  width:25% ;
+}
+
+img{
+  text-align: center;
+  margin-left: 45% ;
+  margin-right: 45% ;
+  width: 10% ;
+}
+
+#col1-1{
+  width: 50%
+}
+
+#content{
+  margin-top: 20px ;
+  margin-left: 40% ;
+  margin-right: 40% ;
+  text-align: center;
+}
+
+#input{
+  text-align: center;
+}
+
+
+table{
+  width: 36%;
+  margin-left: 32%;
+  margin-right: 32% ;
+  border-color: blue ;
+}
+
+td{
+}
