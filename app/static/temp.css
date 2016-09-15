@@ -50,9 +50,10 @@ h3{
 }
 
 table{
+  font-family: helvetica;
   background: white;
   border-radius:3px;
-  border-collapse: collapse;
+  /*border-collapse: collapse;*/
   margin: auto;
   max-width: 600px;
   padding:2px;
@@ -138,6 +139,7 @@ td {
 
 td:last-child {
   border-right: 0px;
+  text-align: right;
 }
 
 th.text-left {
@@ -162,4 +164,9 @@ td.text-center {
 
 td.text-right {
   text-align: right;
+}
+
+td:first-child{
+  font-weight: bold;
+  width: 400px
 }

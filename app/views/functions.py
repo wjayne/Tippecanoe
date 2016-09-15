@@ -4,7 +4,9 @@ import pandas as pd
 import openpyxl
 from math import floor
 from app.settings import APP_STATIC
+import locale
 #class to passs
+locale.setlocale(locale.LC_ALL, '')
 class tuple:
     column = ""
     value = ""
@@ -59,7 +61,7 @@ def get_info(row):
     info.append(row['ZIP'])
     info.append(row['Year_Built'])
     info.append(row['Amenities (5=best 1=worst)'])
-    info.append(row['Appeal (5=best 1=worst)'])
+    # info.append(row['Appeal (5=best 1=worst)'])
     info.append(row['Franchise'])
     for word in info:
         if str(word.dtype) == 'float64':
@@ -114,7 +116,7 @@ def get_revenue(row):
         if k.column == 'Additional Income' or k.column == 'Occupancy':
             k.value = str(to_percent(float(k.value), 0))
         elif k.column != 'Suites' and k.column != 'Rooms':
-            k.value = "$" + k.value
+            k.value = locale.currency(float(k.value), grouping=True)
         revenue2.append(k)
     return revenue2
 
@@ -151,7 +153,7 @@ def get_NOI(row):
     word = str(item.values)
     word = word[1:len(word)-1]
     if word != 'nan' and word != ' nan':
-        return word
+        return locale.currency(float(word), grouping=True)
     return "To be calcualted"
 
 def get_cap_rate(row):
@@ -201,7 +203,7 @@ def get_results(row):
         #print k.value
         if k.value != "nan" and k.value != ' nan':
             if k.column != 'Notes':
-                k.value = "$"+k.value
+                k.value = locale.currency(float(k.value), grouping=True)
             result2.append(k)
     return result2
 
