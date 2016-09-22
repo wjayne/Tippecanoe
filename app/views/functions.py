@@ -277,7 +277,7 @@ def get_str_revenue(row):
         if k.column == 'Additional Income' or k.column == 'Occupancy':
             k.value = str(to_percent(float(k.value), 0))
         if k.value != ' nan' and k.value != 'nan':
-            k.value = "$" + k.value
+            k.value = locale.currency(float(k.value), grouping=True)
             revenue2.append(k)
     return revenue2
 

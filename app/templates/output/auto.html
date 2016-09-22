@@ -8,7 +8,7 @@
 			{% for attr in info %}
 			<tr>
 				<td id="col1"> {{ attr.column.replace("_", " ") }} </td>
-				<td> {{ attr.value }} </td>
+				<td> {{ attr.value.replace(".","") }} </td>
 			</tr>
 			{% endfor %}
 			</table>
