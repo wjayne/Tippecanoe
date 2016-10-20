@@ -277,7 +277,7 @@ def get_str_revenue(row):
         if k.column == 'Additional Income' or k.column == 'Occupancy':
             k.value = str(to_percent(float(k.value), 0))
         if k.value != ' nan' and k.value != 'nan':
-            k.value = "$" + k.value
+            k.value = locale.currency(float(k.value), grouping=True)
             revenue2.append(k)
     return revenue2
 
@@ -327,7 +327,10 @@ def get_str_results(row):
             #info2.append(word.name + ": " + u[start:end])
             k = tuple(word.name, u[start:end])
         if "$" not in k.value:
-            k.value = "$"+k.value
+            try:
+                k.value = locale.currency(float(k.value), grouping=True)
+            except ValueError:
+                k.value = k.value;
         result2.append(k)
     return result2
 
