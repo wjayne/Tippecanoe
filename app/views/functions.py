@@ -302,7 +302,7 @@ def get_str_expenses(row):
             #info2.append(word.name + ": " + u[start:end])
             k = tuple(word.name, u[start:end])
         if k.value != ' nan':
-            k.value = str(to_percent(float(k.value), 2))
+            k.value = locale.currency(float(k.value), 2)
             expenses2.append(k)
     return expenses2
 
