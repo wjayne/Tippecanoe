@@ -633,33 +633,3 @@ def get_mfg_expenses(row):
             k.value = str(to_percent(float(k.value), 2))
             expenses2.append(k)
     return expenses2
-
-
-
-
-
-
-
-
-"""
-print "enter in a parcel number:"
-
-#create df object, currently hard wirde
-hotels = read_excel("Copy of MASTER INCOME DATA.xlsx")
-
-#take in input & decode it to utf-8
-parcelnum = raw_input()
-#parcelnum = parcelnum.decode('utf-8', 'ignore')
-
-#print any(hotels.Category == 'Lodging')
-
-if any(hotels.Parcel_ID == parcelnum):
-    row = search_row (hotels, parcelnum)
-    ls = get_info(row)
-
-    for a in ls:
-        print a
-else:
-    print "Prompted parcel number was not found."
-
-"""
