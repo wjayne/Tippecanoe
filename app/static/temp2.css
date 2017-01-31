@@ -1,46 +1,52 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+body{
+  font-family: "Roboto", helvetica, arial, sans-serif;
+  color: red;
+  text-align: center;
+  overflow-y: scroll;
+  padding-top: 20px;
+}
+
 table{
-  background: white;
-  border-radius:3px;
-  border-collapse: collapse;
-  margin: auto;
-  max-width: 600px;
-  padding:5px;
-  width: 100%;
-  animation: float 5s infinite;
+	text-align: left;
+	clear: left;
+	margin: 0 auto ;
 }
 
-tr{
-  border-top: 1px solid #C1C3D1;
-  border-bottom-: 1px solid #C1C3D1;
-  color:#666B85;
-  font-size:16px;
-  font-weight:normal;
-  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
-}
-
-tr:hover td {
-  background:#4E5066;
-  color:#FFFFFF;
-  border-top: 1px solid #22262e;
-  border-bottom: 1px solid #22262e;
+tr:hover{
+	color: white;
 }
 
 td{
-  text-align: left;
-  padding:2px;
-  margin: 2px;
+	min-width: 200px;
+	max-width: 200px;
+	overflow-x: hidden;
 }
 
-tr:nth-child(odd) td {
-  background:#EBEBEB;
-}
- 
-tr:nth-child(odd):hover td {
-  background:#4E5066;
+h3{
+	/*float: left;*/
+	clear: left;
+	margin-bottom: 5px;
+	margin-top: 15px;
 }
 
-th {
-  border-style: solid;
-  border-width: 2px;
-  text-align: center;
+.contentWill{
+	clear: left;
+	text-align: center;
+	width: 100
+	margin: 0 auto ;
+}
+
+.leftWill{
+	float: left;
+	width: 50%;
+	text-align: center;
+	height: 100%;
+}
+
+.rightWill{
+	float: right;
+	text-align: center;
+	height: 100%;
+	width: 50%;
 }
