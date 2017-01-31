@@ -3,65 +3,65 @@
 {% block content %}
 <h1> Auto-Dealer </h1>
 
-			<table border="1">
-			<thead><tr><th colspan="2">Property Info</th></tr></thead>
-			{% for attr in info %}
-			<tr>
-				<td id="col1"> {{ attr.column.replace("_", " ") }} </td>
-				<td> {{ attr.value.replace(".","") }} </td>
-			</tr>
-			{% endfor %}
-			</table>
-			<br>
+			<div class="leftWill"><div class="contentWill"><table border="1">
+									<thead><tr><th colspan="2">Property Info</th></tr></thead>
+									{% for attr in info %}
+									<tr>
+										<td id="col1"> {{ attr.column.replace("_", " ") }} </td>
+										<td> {{ attr.value.replace(".","") }} </td>
+									</tr>
+									{% endfor %}
+									</table>
+									<br></div>
+			
+						<div class="contentWill"><table border="1">
+									<thead><tr><th colspan="2">Revenue</th></tr></thead>
+									{% for attr in revenue %}
+									<tr>
+										<td id="col1"> {{ attr.column.replace("_", " ") }} </td>
+										<td> {{ attr.value }} </td>
+									</tr>
+									{% endfor %}
+									</table>
+									<br></div>
+			
+						<div class="contentWill"><table border="1">
+									<thead><tr><th colspan="2">Expenses</th></tr></thead>
+									{% for attr in expenses %}
+									<tr>
+										<td id="col1"> {{ attr.column.replace("_", " ") }} </td>
+										<td> {{ attr.value }} </td>
+									</tr>
+									{% endfor %}
+									</table>
+									<br></div></div>
 
-			<table border="1">
-			<thead><tr><th colspan="2">Revenue</th></tr></thead>
-			{% for attr in revenue %}
-			<tr>
-				<td id="col1"> {{ attr.column.replace("_", " ") }} </td>
-				<td> {{ attr.value }} </td>
-			</tr>
-			{% endfor %}
-			</table>
-			<br>
-
-			<table border="1">
-			<thead><tr><th colspan="2">Expenses</th></tr></thead>
-			{% for attr in expenses %}
-			<tr>
-				<td id="col1"> {{ attr.column.replace("_", " ") }} </td>
-				<td> {{ attr.value }} </td>
-			</tr>
-			{% endfor %}
-			</table>
-			<br>
-
-      <table border="1">
-      <thead><tr><th colspan="2">NOI</th></tr></thead>
-        <tr>
-          <td id="col1">NOI</td>
-          <td>${{ NOI }}</td>
-        <tr>
-      </table>
-
-      <table border="1">
-      <thead><tr><th colspan="2">Capitalization Rate</th></tr></thead>
-      {% for attr in cap_rate %}
-      <tr>
-        <td id="col1"> {{ attr.column.replace("_", " ") }} </td>
-        <td> {{ attr.value }} </td>
-      </tr>
-      {% endfor %}
-      </table>
-
-			<table border="1">
-			<thead><tr><th colspan="2">Results</th></tr></thead>
-			{% for attr in result %}
-			<tr>
-				<td id="col1"> {{ attr.column.replace("_", " ") }} </td>
-				<td> {{ attr.value }} </td>
-			</tr>
-			{% endfor %}
-			</table>
+      <div class="rightWill"><div class="contentWill"><table border="1">
+                  <thead><tr><th colspan="2">NOI</th></tr></thead>
+                    <tr>
+                      <td id="col1">NOI</td>
+                      <td>${{ NOI }}</td>
+                    <tr>
+                  </table></div>
+      
+            <div class="contentWill"><table border="1">
+                  <thead><tr><th colspan="2">Capitalization Rate</th></tr></thead>
+                  {% for attr in cap_rate %}
+                  <tr>
+                    <td id="col1"> {{ attr.column.replace("_", " ") }} </td>
+                    <td> {{ attr.value }} </td>
+                  </tr>
+                  {% endfor %}
+                  </table></div>
+      
+      			<div class="contentWill"><table border="1">
+      						<thead><tr><th colspan="2">Results</th></tr></thead>
+      						{% for attr in result %}
+      						<tr>
+      							<td id="col1"> {{ attr.column.replace("_", " ") }} </td>
+      							<td> {{ attr.value }} </td>
+      						</tr>
+      						{% endfor %}
+      						</table></div></div>
 		</h3>
 {% endblock %}
