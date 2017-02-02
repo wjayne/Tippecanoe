@@ -1,10 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
 <h1> Lodging </h1>
-<br><br>
-
 			<div class="leftWill"><div class="contentWill"><table border="1">
-									<thead><tr><th colspan="2">Property Info</th></tr></thead>
+									<h3>Property Info</h3>
 									{% for attr in info %}
 									<tr>
 										<td id="col1"> {{ attr.column.replace("_", " ") }} </td>
@@ -15,7 +13,7 @@
 			
 						
 						<div class="contentWill"><table border="1">
-									<thead><tr><th colspan="2">Revenue</th></tr></thead>
+									<h3>Revenue</h3>
 									{% for attr in revenue %}
 									<tr>
 										<td id="col1-1"> {{ attr.column.replace("_", " ")}} </td>
@@ -25,7 +23,7 @@
 								</table></div>
 			
 						<div class="contentWill"><table border="1">
-									<thead><tr><th colspan="2">Expenses</th></tr></thead>
+									<h3>Expenses</h3>
 									{% for attr in expenses %}
 									<tr>
 										<td id="col1"> {{ attr.column.replace("_", " ") }} </td>
@@ -35,7 +33,7 @@
 									</table></div></div>
 
 			<div class="rightWill"><div class="contentWill"><table border="1">
-									<thead><tr><th colspan="2">NOI</th></tr></thead>
+									<h3>NOI</h3>
 										<tr>
 											<td id="col1">NOI</td>
 											<td>{{ NOI }}</td>
@@ -43,7 +41,7 @@
 									</table></div>
 			
 						<div class="contentWill"><table border="1">
-									<thead><tr><th colspan="2">Capitalization rate</th></tr></thead>
+									<h3>Capitalization rate</h3>
 									{% for attr in cap_rate %}
 									<tr>
 										<td id="col1"> {{ attr.column.replace("_", " ") }} </td>
@@ -53,7 +51,7 @@
 									</table></div>
 			
 						<div class="contentWill"><table border="1">
-									<thead><tr><th colspan="2">results</th></tr></thead>
+									<h3>results</h3>
 									{% for attr in result %}
 									<tr>
 										<td id="col1"> {{ attr.column.replace("_", " ") }} </td>

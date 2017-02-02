@@ -3,12 +3,12 @@
 {% block content %}
 <h1> Self Storage </h1>
 
-			<div class="leftWill"><div class="contentWill"<div class="contentWill"></div>><h3>Basic Property Info</h3>
+			<div class="leftWill"><div class="contentWill"<div class="contentWill"><h3>Basic Property Info</h3>
 									<table border="1">
 									{% for attr in info %}
 									<tr>
 										<td id="col1"> {{ attr.column }} </td>
-										<td> {{ attr.value }} </td>
+										<td> {{ attr.value.replace(".", "") }} </td>
 									</tr>
 									{% endfor %}
 									</table></div>
@@ -40,8 +40,8 @@
                   <table border="1">
                     <tr>
                       <td id="col1">NOI</td>
-                      <td>${{ NOI }}</td>
-                    <tr>
+                      <td>{{ NOI }}</td>
+                    </tr>
                   </table></div>
       
             <div class="contentWill"><h3>Capitalization Rate</h3>
@@ -63,5 +63,5 @@
             			</tr>
             			{% endfor %}
             			</table>
-            		</h3></div></div>
+            		</div></div>
 {% endblock %}

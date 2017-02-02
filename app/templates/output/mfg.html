@@ -7,8 +7,8 @@
 									<table border="1">
 									{% for attr in info %}
 									<tr>
-										<td id="col1"> {{ attr.column }} </td>
-										<td> {{ attr.value }} </td>
+										<td id="col1"> {{ attr.column.replace("_", " ") }} </td>
+										<td> {{ attr.value.replace(".","") }} </td>
 									</tr>
 									{% endfor %}
 									</table></div>
@@ -18,7 +18,7 @@
 			      			<table border="1">
 			      			{% for attr in revenue %}
 			      			<tr>
-			      				<td id="col1"> {{ attr.column }} </td>
+			      				<td id="col1"> {{ attr.column.replace("_", " ") }} </td>
 			      				<td> {{ attr.value }} </td>
 			      			</tr>
 			      			{% endfor %}
@@ -29,7 +29,7 @@
 			      			<table border="1">
 			      			{% for attr in expenses %}
 			      			<tr>
-			      				<td id="col1"> {{ attr.column }} </td>
+			      				<td id="col1"> {{ attr.column.replace("_", " ") }} </td>
 			      				<td> {{ attr.value }} </td>
 			      			</tr>
 			      			{% endfor %}
@@ -48,7 +48,7 @@
                   <table border="1">
                   {% for attr in cap_rate %}
                   <tr>
-                    <td id="col1"> {{ attr.column }} </td>
+                    <td id="col1"> {{ attr.column.replace("_", " ") }} </td>
                     <td> {{ attr.value }} </td>
                   </tr>
                   {% endfor %}
@@ -58,7 +58,7 @@
             			<table border="1">
             			{% for attr in result %}
             			<tr>
-            				<td id="col1"> {{ attr.column }} </td>
+            				<td id="col1"> {{ attr.column.replace("_", " ") }} </td>
             				<td> {{ attr.value }} </td>
             			</tr>
             			{% endfor %}

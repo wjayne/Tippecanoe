@@ -42,10 +42,10 @@ def directions():
         return office_output()
     elif categoryTyper == 'Multi-Family':
         return mtf_output()
-    elif categoryTyper =='Shop/Utility' or categoryTyper == 'Auto-Garage':
-        return shop_output()
     elif categoryTyper == 'Auto-Dealership':
         return auto_output()
+    elif categoryTyper =='Shop/Utility' or categoryTyper == 'Auto-Garage' or 'Auto' in categoryTyper:
+        return shop_output()
     elif categoryTyper.find('Manufacturing') != -1 or categoryTyper == 'Warehouse/Distribution':
         return mfg_output()
     else:
