@@ -3,7 +3,7 @@
 {% block content %}
 <h1> Multi Tenant Retail </h1>
 
-			<div class="leftWill"><div class="contentWill"><h3>Basic Property Info</h3>
+			<div class="col-md-6 col-lg-6"><div class="col-md-12 col-lg-12"><h3>Basic Property Info</h3>
 									<table border="1">
 									{% for attr in info %}
 									<tr>
@@ -14,7 +14,7 @@
 									</table></div>
 						<br>
 			
-			      <div class="contentWill"><h3>Revenue</h3>
+			      <div class="col-md-12 col-lg-12"><h3>Revenue</h3>
 			      			<table border="1">
 			      			{% for attr in revenue %}
 			      			<tr>
@@ -25,7 +25,7 @@
 			      			</table></div>
 						<br>
 			
-			      <div class="contentWill"><h3>Expenses</h3>
+			      <div class="col-md-12 col-lg-12"><h3>Expenses</h3>
 			      			<table border="1">
 			      			{% for attr in expenses %}
 			      			<tr>
@@ -36,7 +36,7 @@
 			      			</table></div>
 						<br></div>
 
-     <div class="rightWill"><div class="contentWill"> <h3>NOI</h3>
+     <div class="col-md-6 col-lg-6"><div class="col-md-12 col-lg-12"> <h3>NOI</h3>
                 <table border="1">
                   <tr>
                     <td id="col1">NOI</td>
@@ -44,7 +44,7 @@
                   </tr>
                 </table></div>
      
-           <div class="contentWill"><h3>Capitalization Rate</h3>
+           <div class="col-md-12 col-lg-12"><h3>Capitalization Rate</h3>
                  <table border="1">
                  {% for attr in cap_rate %}
                  <tr>
@@ -54,7 +54,7 @@
                  {% endfor %}
                  </table></div>
      
-           <div class="contentWill"><h3>Results</h3>
+           <div class="col-md-12 col-lg-12"><h3>Results</h3>
            			<table border="1">
            			{% for attr in result %}
            			<tr>

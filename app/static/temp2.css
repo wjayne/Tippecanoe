@@ -5,12 +5,14 @@ body{
   text-align: center;
   overflow-y: scroll;
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 table{
 	text-align: left;
 	clear: left;
 	margin: 0 auto ;
+	width: 100%;
 }
 
 tr:hover{
@@ -18,7 +20,7 @@ tr:hover{
 }
 
 td{
-	width: 220px;
+	width: 50%;
 	font-size: 18px;
 	overflow-x: hidden;
 	border-style: solid;

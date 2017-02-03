@@ -216,7 +216,7 @@ def get_results(row):
             result2.append(k)
         else:
             k.value = 'MISSING'
-            expenses2.append(k)
+            result2.append(k)
     return result2
 
 def to_percent(val, digits):
