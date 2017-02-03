@@ -7,6 +7,7 @@
 <html>
 	<head>
 		<title>Parcel Search</title>
+		<link rel="stylesheet" type="text/css" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -14,52 +15,57 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	</head>
-	<body style="display: inline-block;">
+	<body style="">
 
-		<div id="B" style="float: right; height: 100%; width: 50%; text-align: center; margin-top: -50px;">
-				<h3>About this tool</h3>
-				<p style="overflow-y: scroll; max-height: 100%">
-				<img src="/static/200years.jpg"><br>Test Parcel: 79-07-25-251-001.000-005<br><br>
-				NOT WORKING:<br>Mobile Home Park<br>Flex Space<br>Anything with child parcels<br>Please confirm Property types are displaying correct values<br><br>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar ultricies turpis vitae pretium. Nulla sed lorem feugiat, condimentum metus ut, tempor est. Sed vitae bibendum ex, ac convallis mauris. Integer cursus lacus eu augue pulvinar, quis aliquet quam eleifend. Suspendisse mattis nisl id risus pretium dictum. Aenean feugiat mi sed magna rhoncus ultrices. Fusce sed est sed diam sollicitudin tempus. Integer consequat pellentesque enim et hendrerit. Mauris convallis odio neque, eget posuere tellus ultricies ac. Nullam nec ex mauris. In ac orci ut odio congue bibendum nec nec massa. Ut blandit feugiat velit non blandit. Vestibulum placerat tellus nec tempor laoreet. Quisque id finibus sapien.
-				<br><br>
-				Vestibulum eget pellentesque orci. In ullamcorper, elit et consectetur accumsan, metus eros tempor tortor, in vestibulum libero orci vel dui. Aliquam tempor sapien sit amet purus condimentum, vitae porttitor neque rhoncus. Nam sed massa a augue imperdiet blandit. Integer tempor turpis eu lorem fermentum imperdiet. Donec placerat massa at fringilla imperdiet. Mauris tempus vestibulum elementum. Ut at est suscipit, dapibus felis ac, tempor metus. Maecenas sit amet enim metus. Praesent blandit lacinia auctor. Curabitur tristique accumsan mi ut suscipit. Aliquam erat volutpat. Vivamus pulvinar urna in sem commodo, non hendrerit neque tristique.
-				<br><br>
-				Pellentesque quis sodales ipsum, id facilisis leo. Nulla bibendum egestas ante, egestas pellentesque magna sagittis eget. Nunc pulvinar et massa vel malesuada. Aenean facilisis lobortis odio, quis consequat nunc. Donec ac congue dui, in rhoncus sem. In quis sagittis eros, eget consectetur dolor. Mauris at sem aliquam, faucibus urna sit amet, aliquam diam. Vestibulum vulputate felis et urna sagittis, vel scelerisque elit tempus.
-				<br><br>
-				Curabitur vestibulum finibus orci sit amet mattis. Etiam condimentum volutpat aliquam. Curabitur porttitor fringilla mauris. In eget vehicula metus, ac euismod purus. Phasellus lobortis tortor eget nisl vehicula, quis facilisis turpis condimentum. Morbi pharetra quis ipsum nec mollis. Nulla quis dolor vitae est efficitur fringilla ac ut felis. Aenean justo est, consectetur ac molestie sit amet, dapibus id orci. Donec eleifend non turpis in rhoncus. Aenean interdum nunc a aliquam efficitur. Fusce fermentum nisl a mauris ultrices accumsan. In hac habitasse platea dictumst. Sed vitae malesuada sem, at elementum massa. Quisque posuere ex eget consectetur elementum. Integer lobortis tristique ipsum nec vestibulum.
-				<br><br>
-				Quisque fringilla sapien sed urna varius dignissim. Nullam condimentum fringilla magna ac interdum. Nunc lacinia vitae lectus sed efficitur. Curabitur eleifend, nisi nec fringilla vehicula, justo arcu egestas felis, id viverra est diam nec mauris. Nam sit amet scelerisque odio, ut sollicitudin eros. Nulla ut nisi vel eros rutrum tempor. Nunc ac odio turpis. Etiam mollis ante ex, eget tincidunt ipsum semper ac. Pellentesque ac velit ac nisi egestas dictum. Donec porta molestie tortor. Nunc est lorem, aliquam eu accumsan sit amet, malesuada eget lorem. Etiam ut sapien dictum, imperdiet odio ut, consectetur lacus. Maecenas sed lacus eget tortor gravida condimentum eget at tortor.
-				</p>
-			</div>
+		<div class="container" style="max-height: 100%;">
+
 		<!-- Header -->
-		<div id="A" style="float: left; height: 100%; width: 50%;">
-			
-			<div id="C" style="position: relative; margin-top: 25%; margin-left: 10%">			
-				<header id="header">
-					<h1>Tippecanoe County</h1>
-					<p>Enter a parcel number</p>
-				</header>
+				<div id="" class="col-md-6 col-lg-6 col-sm-12" style="text-align: center;">
+					
+					<div id="C" style="position: relative; margin-top: 25%; margin-left: 10%">			
+						<header id="header">
+							<h1>Tippecanoe County</h1>
+							<p>Enter a parcel number</p>
+						</header>
+		
+						<!-- Signup Form -->
+						<div style="text-align: center; padding-left: 15%;">
+						<form id="signup-form" method="post">
+							<input type="text" name="parcelNumber" id="email" placeholder="Parcel Number" />
+							<input type="submit" name="my-form" value="Send" />
+						</form>
+						</div>
+					</div>
+				</div>
 
-				<!-- Signup Form -->
-				<form id="signup-form" method="post">
-					<input type="text" name="parcelNumber" id="email" placeholder="Parcel Number" />
-					<input type="submit" name="my-form" value="Send" />
-				</form>
 
-			</div>
+		<div id="" class="col-md-6 col-lg-6 col-sm-12" style="max-height: 100%; text-align: center;">
+						<h3>About this tool</h3>
+						<p style="overflow-y: scroll; max-height: 600px">
+						<img src="/static/200years.jpg"><br>Test Parcel: 79-07-25-251-001.000-005<br><br>
+						NOT WORKING:<br>Mobile Home Park<br>Flex Space<br>Anything with child parcels<br>Please confirm Property types are displaying correct values<br><br>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar ultricies turpis vitae pretium. Nulla sed lorem feugiat, condimentum metus ut, tempor est. Sed vitae bibendum ex, ac convallis mauris. Integer cursus lacus eu augue pulvinar, quis aliquet quam eleifend. Suspendisse mattis nisl id risus pretium dictum. Aenean feugiat mi sed magna rhoncus ultrices. Fusce sed est sed diam sollicitudin tempus. Integer consequat pellentesque enim et hendrerit. Mauris convallis odio neque, eget posuere tellus ultricies ac. Nullam nec ex mauris. In ac orci ut odio congue bibendum nec nec massa. Ut blandit feugiat velit non blandit. Vestibulum placerat tellus nec tempor laoreet. Quisque id finibus sapien.
+						<br><br>
+						Vestibulum eget pellentesque orci. In ullamcorper, elit et consectetur accumsan, metus eros tempor tortor, in vestibulum libero orci vel dui. Aliquam tempor sapien sit amet purus condimentum, vitae porttitor neque rhoncus. Nam sed massa a augue imperdiet blandit. Integer tempor turpis eu lorem fermentum imperdiet. Donec placerat massa at fringilla imperdiet. Mauris tempus vestibulum elementum. Ut at est suscipit, dapibus felis ac, tempor metus. Maecenas sit amet enim metus. Praesent blandit lacinia auctor. Curabitur tristique accumsan mi ut suscipit. Aliquam erat volutpat. Vivamus pulvinar urna in sem commodo, non hendrerit neque tristique.
+						<br><br>
+						Pellentesque quis sodales ipsum, id facilisis leo. Nulla bibendum egestas ante, egestas pellentesque magna sagittis eget. Nunc pulvinar et massa vel malesuada. Aenean facilisis lobortis odio, quis consequat nunc. Donec ac congue dui, in rhoncus sem. In quis sagittis eros, eget consectetur dolor. Mauris at sem aliquam, faucibus urna sit amet, aliquam diam. Vestibulum vulputate felis et urna sagittis, vel scelerisque elit tempus.
+						<br><br>
+						Curabitur vestibulum finibus orci sit amet mattis. Etiam condimentum volutpat aliquam. Curabitur porttitor fringilla mauris. In eget vehicula metus, ac euismod purus. Phasellus lobortis tortor eget nisl vehicula, quis facilisis turpis condimentum. Morbi pharetra quis ipsum nec mollis. Nulla quis dolor vitae est efficitur fringilla ac ut felis. Aenean justo est, consectetur ac molestie sit amet, dapibus id orci. Donec eleifend non turpis in rhoncus. Aenean interdum nunc a aliquam efficitur. Fusce fermentum nisl a mauris ultrices accumsan. In hac habitasse platea dictumst. Sed vitae malesuada sem, at elementum massa. Quisque posuere ex eget consectetur elementum. Integer lobortis tristique ipsum nec vestibulum.
+						<br><br>
+						Quisque fringilla sapien sed urna varius dignissim. Nullam condimentum fringilla magna ac interdum. Nunc lacinia vitae lectus sed efficitur. Curabitur eleifend, nisi nec fringilla vehicula, justo arcu egestas felis, id viverra est diam nec mauris. Nam sit amet scelerisque odio, ut sollicitudin eros. Nulla ut nisi vel eros rutrum tempor. Nunc ac odio turpis. Etiam mollis ante ex, eget tincidunt ipsum semper ac. Pellentesque ac velit ac nisi egestas dictum. Donec porta molestie tortor. Nunc est lorem, aliquam eu accumsan sit amet, malesuada eget lorem. Etiam ut sapien dictum, imperdiet odio ut, consectetur lacus. Maecenas sed lacus eget tortor gravida condimentum eget at tortor.
+						</p>
+					</div>
+				
+			<div class="col-md-12"><footer id="footer">
+							<ul class="copyright">
+								<li>&copy; Untitled.</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</footer></div>
 		</div>
-
-		<!-- Footer -->
-			<footer id="footer">
-				<ul class="copyright">
-					<li>&copy; Untitled.</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</footer>
-
 		<!-- Scripts -->
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="/static/main.js"></script>
-
+			<script type="text/javascript" src="/static/bootstrap-3.3.7-dist/js/jquery-3.1.1.min.js"></script>
+        	<script type="text/javascript" src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 	</body>
 </html>
