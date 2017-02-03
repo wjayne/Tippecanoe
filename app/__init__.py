@@ -22,6 +22,7 @@ from .views.multi_family import mtf
 from .views.shop import shop
 from .views.auto import auto
 from .views.mfg import mfg
+from .views.nonso import nonso
 
 app.register_blueprint(home)
 app.register_blueprint(director)#, url_prefix='/ayy')
@@ -36,3 +37,4 @@ app.register_blueprint(mtf)
 app.register_blueprint(shop)
 app.register_blueprint(auto)
 app.register_blueprint(mfg)
+app.register_blueprint(nonso)

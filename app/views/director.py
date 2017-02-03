@@ -3,6 +3,7 @@ from xlrd import *
 from flask import Blueprint, render_template
 from flask import request
 import pandas as pd
+import sys
 
 from rest import *
 from office import *
@@ -16,6 +17,7 @@ from functions import *
 from shop import *
 from auto import *
 from mfg import *
+from nonso import *
 from app.settings import APP_STATIC
 
 director = Blueprint('director', __name__)
@@ -27,6 +29,7 @@ def directions():
     #categoryTyper = "Single Tenant Retail"
     print categoryTyper
     print "HERE I AM"
+    sys.stdout.flush()
     if categoryTyper == 'Golf Course':
         return golf_output()
     elif categoryTyper == 'Lodging':
@@ -51,3 +54,5 @@ def directions():
         return mfg_output()
     else:
         print "nonso"
+        return render_template("home/index.html", error="Parcel not found")
+
