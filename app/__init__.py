@@ -4,7 +4,6 @@ import os
 
 app = Flask(__name__)
 
-#JANK ASS 2 DANK HAMMER
 # APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 # UPLOAD_FOLDER = os.path.join(APP_ROOT, 'static')
 # app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
