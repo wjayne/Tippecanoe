@@ -26,6 +26,7 @@ def directions():
     categoryTyper = get_type(parcel)
     #categoryTyper = "Single Tenant Retail"
     print categoryTyper
+    print "HERE I AM"
     if categoryTyper == 'Golf Course':
         return golf_output()
     elif categoryTyper == 'Lodging':
@@ -40,7 +41,7 @@ def directions():
         return rest_output()
     elif categoryTyper.find('Office') != -1:
         return office_output()
-    elif categoryTyper == 'Multi-Family':
+    elif categoryTyper == 'Multi Family':
         return mtf_output()
     elif categoryTyper == 'Auto-Dealership':
         return auto_output()

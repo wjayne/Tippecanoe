@@ -19,7 +19,7 @@ class tuple:
 #returns the first first sheet as an object
 def read_excel(file):
     xl = openpyxl.load_workbook(file)
-    sheet = xl.get_sheet_by_name('Sheet1')
+    sheet = xl.get_sheet_by_name('Query1')
     sheetpass = pd.DataFrame()
     sheetpass = pd.read_excel(file)
     return sheetpass
@@ -78,6 +78,9 @@ def get_info(row):
         if k.value[len(k.value)-1] == ".":
             k.value = k.value[0:len(k.value)-1]
         if 'nan' not in k.value:
+            info2.append(k)
+        else:
+            k.value = 'MISSING'
             info2.append(k)
 
     return info2
@@ -145,6 +148,9 @@ def get_expenses(row):
         if 'nan' not in k.value:
             k.value = str(to_percent(float(k.value), 2))
             expenses2.append(k)
+        else:
+            k.value = 'MISSING'
+            expenses2.append(k)
 
     return expenses2
 
@@ -177,13 +183,16 @@ def get_cap_rate(row):
         if k.value != ' nan' and 'nan' not in k.value:
             k.value = str(to_percent(float(k.value), 2))
             cap_rate2.append(k)
+        else:
+            k.value = 'MISSING'
+            cap_rate2.append(k)
 
     return cap_rate2
 
 def get_results(row):
     result = []
     result2 = []
-    result.append(row['AV'])
+    result.append(row['LastRolledValue'])
     result.append(row['Pers_Prop'])
     result.append(row['RE_TTV'])
     result.append(row['AV/Unit'])
@@ -205,6 +214,9 @@ def get_results(row):
             if k.column != 'Notes':
                 k.value = locale.currency(float(k.value), grouping=True)
             result2.append(k)
+        else:
+            k.value = 'MISSING'
+            expenses2.append(k)
     return result2
 
 def to_percent(val, digits):
@@ -246,7 +258,10 @@ def get_golf_info(row):
             #info2.append(word.name + ": " + u[start:end])
             k = tuple(word.name, u[start:end])
 
-        if 'nan' not in k.value:
+        if 'nan' not in k.value or len(k.value) > 5:
+            info2.append(k)
+        else:
+            k.value = 'MISSING'
             info2.append(k)
     return info2
 
@@ -281,6 +296,9 @@ def get_str_revenue(row):
         if k.value != ' nan' and k.value != 'nan' and 'nan' not in k.value:
             k.value = locale.currency(float(k.value), grouping=True)
             revenue2.append(k)
+        else:
+            k.value = 'MISSING'
+            revenue2.append(k)
     return revenue2
 
 def get_str_expenses(row):
@@ -306,12 +324,15 @@ def get_str_expenses(row):
         if k.value != ' nan' and 'nan' not in k.value:
             k.value = locale.currency(float(k.value), 2)
             expenses2.append(k)
+        else:
+            k.value = 'MISSING'
+            expenses2.append(k)
     return expenses2
 
 def get_str_results(row):
     result = []
     result2 = []
-    result.append(row['AV'])
+    result.append(row['LastRolledValue'])
     result.append(row['Pers_Prop'])
     result.append(row['RE_TTV'])
     result.append(row['AV/SF'])
@@ -334,6 +355,9 @@ def get_str_results(row):
             except ValueError:
                 k.value = k.value;
         if 'nan' not in k.value:        
+            result2.append(k)
+        else:
+            k.value = 'MISSING'
             result2.append(k)
     return result2
 
@@ -373,6 +397,9 @@ def mtr_center_revenue(row):
             k.value = "$" + k.value
         if 'nan' not in k.value:
             revenue2.append(k)
+        else:
+            k.value = 'MISSING'
+            revenue.append(k)
     return revenue2
 
 def get_storage_revenue(row):
@@ -406,6 +433,9 @@ def get_storage_revenue(row):
             locale.currency(float(k.value), grouping=True)
         if 'nan' not in k.value:
             revenue2.append(k)
+        else:
+            k.value = 'MISSING'
+            revenue2.append(k)
         return revenue2
 
 def get_storage_expenses(row):
@@ -434,6 +464,9 @@ def get_storage_expenses(row):
         if k.value != ' nan' and 'nan' not in k.value:
             k.value = locale.currency(float(k.value), grouping=True)
             expenses2.append(k)
+        else:
+            k.value = 'MISSING'
+            expenses2.append(k)
     return expenses2
 
 def get_office_expenses(row):
@@ -459,6 +492,9 @@ def get_office_expenses(row):
             k = tuple(word.name, u[start:end])
         if k.value != ' nan' and 'nan' not in k.value:
             k.value = locale.currency(float(k.value), grouping=True)
+            expenses2.append(k)
+        else:
+            k.value = 'MISSING'
             expenses2.append(k)
     return expenses2
 
@@ -494,6 +530,9 @@ def get_multi_family_revenue(row):
             k.value = locale.currency(float(k.value), grouping=True)
         if 'nan' not in k.value:
             revenue2.append(k)
+        else:
+            k.value = 'MISSING'
+            revenue2.append(k)
         return revenue2
 
 def get_mf_expenses(row):
@@ -520,12 +559,15 @@ def get_mf_expenses(row):
         if k.value != ' nan' and 'nan' not in k.value:
             k.value = locale.currency(float(k.value), grouping=True)
             expenses2.append(k)
+        else:
+            k.value = 'MISSING'
+            expenses2.append(k)
     return expenses2
 
 def get_mf_results(row):
     result = []
     result2 = []
-    result.append(row['AV'])
+    result.append(row['LastRolledValue'])
     result.append(row['Pers_Prop'])
     result.append(row['RE_TTV'])
     result.append(row['AV/Unit'])
@@ -544,7 +586,10 @@ def get_mf_results(row):
             k = tuple(word.name, u[start:end])
 
         if 'nan' not in k.value:
-            k.value = "$"+k.value
+            k.value = k.value
+            result2.append(k)
+        else:
+            k.value = 'MISSING'
             result2.append(k)
     return result2
 
@@ -584,6 +629,9 @@ def get_shop_revenue(row):
             k.value = "$" + k.value
         if 'nan' not in k.value:
             revenue2.append(k)
+        else:
+            k.value = 'MISSING'
+            revenue2.append(k)
         return revenue2
 
 def get_shop_expenses(row):
@@ -609,6 +657,9 @@ def get_shop_expenses(row):
         if k.value != ' nan' and 'nan' not in k.value:
             k.value = str(to_percent(float(k.value), 2))
             expenses2.append(k)
+        else:
+            k.value = 'MISSING'
+            expenses2.append(k)   
     return expenses2
 
 def get_mfg_expenses(row):
@@ -633,5 +684,8 @@ def get_mfg_expenses(row):
             k = tuple(word.name, u[start:end])
         if k.value != ' nan' and 'nan' not in k.value:
             k.value = str(to_percent(float(k.value), 2))
+            expenses2.append(k)
+        else:
+            k.value = 'MISSING'
             expenses2.append(k)
     return expenses2

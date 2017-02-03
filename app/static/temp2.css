@@ -18,13 +18,15 @@ tr:hover{
 }
 
 td{
-	min-width: 180px;
-	max-width: 180px;
+	width: 220px;
+	font-size: 18px;
 	overflow-x: hidden;
 	border-style: solid;
 	border-color: white;
 	border-width: 1px;
 	padding-left: 3px;
+	padding-top: 2px;
+	padding-bottom: 2px;
 }
 
 h3{
@@ -37,7 +39,6 @@ h3{
 .contentWill{
 	clear: left;
 	text-align: center;
-	width: 100
 	margin: 0 auto ;
 }
 
