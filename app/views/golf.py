@@ -9,9 +9,7 @@ from app.settings import APP_STATIC
 
 golf = Blueprint('golf', __name__)
 
-@golf.route('/', methods=['POST'])
-def golf_output():
-    parcel = request.form['parcelNumber']
+def golf_output(parcel):
 
     hotels = read_excel(os.path.join(APP_STATIC, 'Copy of MASTER INCOME DATA.xlsx'))
     if any(hotels.Parcel_ID == parcel):

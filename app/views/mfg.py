@@ -10,9 +10,8 @@ from app.settings import APP_STATIC
 
 mfg = Blueprint('mfg', __name__)
 
-@mfg.route('/', methods=['POST'])
-def mfg_output():
-    parcel = request.form['parcelNumber']
+def mfg_output(parcelNumber):
+    parcel = parcelNumber
 
     hotels = read_excel(os.path.join(APP_STATIC, 'Copy of MASTER INCOME DATA.xlsx'))
     if any(hotels.Parcel_ID == parcel):
@@ -27,12 +26,14 @@ def mfg_output():
         NOI = get_NOI(row)
         cap_rate = get_cap_rate(row)
         results = get_str_results(row)
+        children = get_child_parcels(row)
         return render_template("output/mfg.html", info=info,
                                                   revenue=revenue,
                                                   expenses=expenses,
                                                   NOI=NOI,
                                                   result=results,
                                                   title=title,
-                                                  cap_rate=cap_rate)
+                                                  cap_rate=cap_rate,
+                                                  children=children)
 
     return "Parcel Number wasn't found"

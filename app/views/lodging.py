@@ -9,15 +9,13 @@ from app.settings import APP_STATIC
 
 lodging = Blueprint('lodging', __name__)
 
-@lodging.route('/', methods=['POST', 'GET'])
-def lodging_output():
-    #print "---" + thingy
-    parcel = request.form['parcelNumber']
+def lodging_output(parcel):
 
     #with open(os.path.join(APP_STATIC, 'Copy of MASTER INCOME DATA.xlsx')) as f:
     hotels = read_excel(os.path.join(APP_STATIC, 'Copy of MASTER INCOME DATA.xlsx'))
     if any(hotels.Parcel_ID == parcel):
         row = search_row(hotels, parcel)
+        print "B"
         #print_info(row)
         headers = row.dtypes.index
         #print row.dtypes

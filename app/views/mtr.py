@@ -10,10 +10,8 @@ from app.settings import APP_STATIC
 
 mtr = Blueprint('mtr', __name__)
 
-@mtr.route('/', methods=['POST'])
-def mtr_output():
-    parcel = request.form['parcelNumber']
-
+def mtr_output(parcel):
+  
     hotels = read_excel(os.path.join(APP_STATIC, 'Copy of MASTER INCOME DATA.xlsx'))
     if any(hotels.Parcel_ID == parcel):
         row = search_row(hotels, parcel)

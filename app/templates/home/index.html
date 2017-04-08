@@ -12,8 +12,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="/static/main.css">
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!-- <[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><[endif]> -->
+		<!-- <[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><[endif]> -->
 	</head>
 	<body style="">
 
@@ -31,7 +31,7 @@
 		
 						<!-- Signup Form -->
 						<div style="display: block; text-align: center;">
-						<form id="signup-form" method="post" style="display: inline-block; text-align: center; margin-left: auto; margin-right: auto">
+						<form id="signup-form" onsubmit="event.preventDefault(); fake_link()" style="display: inline-block; text-align: center; margin-left: auto; margin-right: auto">
 							<input type="text" name="parcelNumber" id="email" placeholder="Parcel Number" /><br>
 							<input type="submit" name="my-form" value="Send" />
 						</form>
@@ -43,7 +43,7 @@
 		<div id="" class="col-md-6 col-lg-6 col-sm-12" style="max-height: 100%; text-align: center;">
 						<h3>About this tool</h3>
 						<p style="overflow-y: scroll; max-height: 600px">
-						<img src="/static/200years.jpg"><br>Test Parcel: 79-07-25-251-001.000-005<br><br>
+						<img src="/static/inc_banner.jpg" style="width:75%; height: 75%"><br>Test Parcel: 79-07-25-251-001.000-005<br><br>
 						NOT WORKING:<br>Mobile Home Park<br>Flex Space<br>Anything with child parcels<br>Please confirm Property types are displaying correct values<br><br>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar ultricies turpis vitae pretium. Nulla sed lorem feugiat, condimentum metus ut, tempor est. Sed vitae bibendum ex, ac convallis mauris. Integer cursus lacus eu augue pulvinar, quis aliquet quam eleifend. Suspendisse mattis nisl id risus pretium dictum. Aenean feugiat mi sed magna rhoncus ultrices. Fusce sed est sed diam sollicitudin tempus. Integer consequat pellentesque enim et hendrerit. Mauris convallis odio neque, eget posuere tellus ultricies ac. Nullam nec ex mauris. In ac orci ut odio congue bibendum nec nec massa. Ut blandit feugiat velit non blandit. Vestibulum placerat tellus nec tempor laoreet. Quisque id finibus sapien.
 						<br><br>
@@ -65,6 +65,7 @@
 		</div>
 		<!-- Scripts -->
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="/static/will.js"></script>
 			<script src="/static/main.js"></script>
 			<script type="text/javascript" src="/static/bootstrap-3.3.7-dist/js/jquery-3.1.1.min.js"></script>
         	<script type="text/javascript" src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>

@@ -26,6 +26,7 @@ def read_excel(file):
 
 #functino to search the row corresponding to the input parcel
 def search_row(df, parcel):
+    print "A"
     return df.loc[df['Parcel_ID'] == parcel]
 
 #prints out in format
@@ -208,7 +209,7 @@ def get_results(row):
             k = tuple(word.name, u[start+1:len(u)-1])
         else:
             #info2.append(word.name + ": " + u[start:end])
-            k = tuple(word.name, u[start+1:end])
+            k = tuple(word.name, u[start:end])
         #print k.value
         if k.value != "nan" and k.value != ' nan' and 'nan' not in k.value:
             if k.column != 'Notes':
@@ -689,3 +690,12 @@ def get_mfg_expenses(row):
             k.value = 'MISSING'
             expenses2.append(k)
     return expenses2
+
+def get_child_parcels(row):
+    children = row['Child Parcels']
+    chi = []
+    for thing in children:
+        x = thing.split(',')
+        for a in x:
+            chi.append(a)
+    return chi

@@ -10,9 +10,7 @@ from app.settings import APP_STATIC
 
 mtf = Blueprint('mtf', __name__)
 
-@mtf.route('/', methods=['POST'])
-def mtf_output():
-    parcel = request.form['parcelNumber']
+def mtf_output(parcel):
 
     hotels = read_excel(os.path.join(APP_STATIC, 'Copy of MASTER INCOME DATA.xlsx'))
     if any(hotels.Parcel_ID == parcel):

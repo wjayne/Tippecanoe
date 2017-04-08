@@ -10,9 +10,7 @@ from app.settings import APP_STATIC
 
 office = Blueprint('office', __name__)
 
-@office.route('/', methods=['POST'])
-def office_output():
-    parcel = request.form['parcelNumber']
+def office_output(parcel):
 
     hotels = read_excel(os.path.join(APP_STATIC, 'Copy of MASTER INCOME DATA.xlsx'))
     if any(hotels.Parcel_ID == parcel):
