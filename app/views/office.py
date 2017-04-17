@@ -24,11 +24,13 @@ def office_output(parcel):
         NOI = get_NOI(row)
         cap_rate = get_cap_rate(row)
         results = get_str_results(row)
+        children = get_child_parcels(row)
         return render_template("output/office.html", info=info,
                                                   revenue=revenue,
                                                   expenses=expenses,
                                                   NOI=NOI,
                                                   result=results,
-                                                  cap_rate=cap_rate)
+                                                  cap_rate=cap_rate,
+                                                  children=children)
 
     return "Parcel Number wasn't found"

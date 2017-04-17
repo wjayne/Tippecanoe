@@ -5,7 +5,9 @@ import openpyxl
 from math import floor
 from app.settings import APP_STATIC
 import locale
+import sys
 #class to passs
+global excelData
 locale.setlocale(locale.LC_ALL, '')
 class tuple:
     column = ""
@@ -18,15 +20,32 @@ class tuple:
 #function to read in excel files as dataframes
 #returns the first first sheet as an object
 def read_excel(file):
-    xl = openpyxl.load_workbook(file)
-    sheet = xl.get_sheet_by_name('Query1')
-    sheetpass = pd.DataFrame()
-    sheetpass = pd.read_excel(file)
-    return sheetpass
+    global excelData
+    try:
+        print "SAVE TIME"
+        sys.stdout.flush()
+        return excelData
+    except:
+        xl = openpyxl.load_workbook(file)
+        sheet = xl.get_sheet_by_name('Query1')
+        sheetpass = pd.DataFrame()
+        sheetpass = pd.read_excel(file)
+        excelData = sheetpass
+        return sheetpass
+    # if excelData == None:
+    #     xl = openpyxl.load_workbook(file)
+    #     sheet = xl.get_sheet_by_name('Query1')
+    #     sheetpass = pd.DataFrame()
+    #     sheetpass = pd.read_excel(file)
+    #     excelData = sheetpass
+    #     return sheetpass
+    # else:
+    #     return excelData
 
 #functino to search the row corresponding to the input parcel
 def search_row(df, parcel):
-    print "A"
+    print "ROW SEARHC"
+    sys.stdout.flush()
     return df.loc[df['Parcel_ID'] == parcel]
 
 #prints out in format
@@ -225,7 +244,11 @@ def to_percent(val, digits):
     return '{1:.{0}f}%'.format(digits, floor(val) / 10 ** digits)
 
 def get_type(parcelnumber):
+    print "BEFOR XCEL"
+    sys.stdout.flush()
     table1 = read_excel(os.path.join(APP_STATIC, 'Copy of MASTER INCOME DATA.xlsx'))
+    print "AFTER XCEL"
+    sys.stdout.flush()
     row1 = search_row(table1, parcelnumber)
     u =  str(row1['Category'].values)
     start = u.find('\'')+1
@@ -692,10 +715,13 @@ def get_mfg_expenses(row):
     return expenses2
 
 def get_child_parcels(row):
-    children = row['Child Parcels']
-    chi = []
-    for thing in children:
-        x = thing.split(',')
-        for a in x:
-            chi.append(a)
-    return chi
+    try:
+        children = row['Child Parcels']
+        chi = []
+        for thing in children:
+            x = thing.split(',')
+            for a in x:
+                chi.append(a)
+        return chi
+    except:
+        return ['None']

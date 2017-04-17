@@ -63,5 +63,14 @@
            			</tr>
            			{% endfor %}
            			</table>
-           		</div></div>
+           		</div>
+
+           	<div class="col-md-12 col-lg-12"><h3>Child Parcels</h3>
+            			<table border="1">
+            			{% for child in children %}
+            			<tr>
+            				<td id="col1" style="text-align: center;"><a href="/search/{{child}}">{{ child }}</a></td>
+            			</tr>
+            			{% endfor %}
+            			</table></div></div>
 {% endblock %}
