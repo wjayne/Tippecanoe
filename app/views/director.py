@@ -62,31 +62,32 @@ def search(parcelNumber):
     categoryTyper = get_type(parcel)
     #categoryTyper = "Single Tenant Retail"
     print categoryTyper
-    print "HERE I AM"
+    #print "HERE I AM"
     sys.stdout.flush()
-    if categoryTyper == 'Golf Course':
+    if categoryTyper.find('Golf Course') != -1:
         return golf_output(parcel)
-    elif categoryTyper == 'Lodging' or categoryTyper == 'Mobile Home Park':
+    elif categoryTyper.find('Lodging') != -1 or categoryTyper.find('Mobile Home Park') != -1:
         return lodging_output(parcel)
-    elif categoryTyper == 'Single Tenant Retail':
+    elif categoryTyper.find('Single Tenant Retail') != -1:
         return strg_output(parcel)
-    elif categoryTyper == 'Multi Tenant Retail':
+    elif categoryTyper.find('Multi Tenant Retail') != -1:
         return mtr_output(parcel)
-    elif categoryTyper == 'Self Storage':
+    elif categoryTyper.find('Self Storage') != -1:
         return storage_output(parcel)
-    elif categoryTyper == 'Restaurant':
+    elif categoryTyper.find('Restaurant') != -1:
         return rest_output(parcel)
     elif categoryTyper.find('Office') != -1:
         return office_output(parcel)
-    elif categoryTyper == 'Multi Family':
+    elif categoryTyper.find('Multi-Family') != -1:
         return mtf_output(parcel)
-    elif categoryTyper == 'Auto-Dealership':
+    elif categoryTyper.find('Auto-Dealership') != -1:
         return auto_output(parcel)
-    elif categoryTyper =='Shop/Utility' or categoryTyper == 'Auto-Garage' or 'Auto' in categoryTyper:
+    elif categoryTyper.find('Shop/Utility') != -1 or categoryTyper.find('Auto-Garage') != -1 or 'Auto' in categoryTyper:
         return shop_output(parcel)
     elif categoryTyper.find('Manufacturing') != -1 or categoryTyper == 'Warehouse/Distribution':
         return mfg_output(parcel)
     else:
-        print "nonso"
+        print "Type not found"
+	print categoryTyper
         return render_template("home/index.html", error="Parcel not found")
 

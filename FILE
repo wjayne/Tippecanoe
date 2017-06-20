@@ -1,0 +1,2 @@
+127.0.0.1 - - [19/Jun/2017:22:14:45 +0000] "GET / HTTP/1.0" 200 5984 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
+127.0.0.1 - - [19/Jun/2017:22:15:04 +0000] "GET /search/79-07-25-251-001.000-005 HTTP/1.0" 500 291 "http://tippecanoeincomeapproach.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"

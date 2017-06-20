@@ -212,7 +212,7 @@ def get_cap_rate(row):
 def get_results(row):
     result = []
     result2 = []
-    result.append(row['LastRolledValue'])
+    result.append(row['TotalWorkbookValue'])
     result.append(row['Pers_Prop'])
     result.append(row['RE_TTV'])
     result.append(row['AV/Unit'])
@@ -356,7 +356,7 @@ def get_str_expenses(row):
 def get_str_results(row):
     result = []
     result2 = []
-    result.append(row['LastRolledValue'])
+    result.append(row['TotalWorkbookValue'])
     result.append(row['Pers_Prop'])
     result.append(row['RE_TTV'])
     result.append(row['AV/SF'])
@@ -591,7 +591,7 @@ def get_mf_expenses(row):
 def get_mf_results(row):
     result = []
     result2 = []
-    result.append(row['LastRolledValue'])
+    result.append(row['TotalWorkbookValue'])
     result.append(row['Pers_Prop'])
     result.append(row['RE_TTV'])
     result.append(row['AV/Unit'])

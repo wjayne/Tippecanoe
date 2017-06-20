@@ -1,0 +1,14 @@
+[2017-06-19 22:16:51 +0000] [1615] [INFO] Starting gunicorn 19.4.3
+[2017-06-19 22:16:51 +0000] [1615] [INFO] Listening at: http://127.0.0.1:8000 (1615)
+[2017-06-19 22:16:51 +0000] [1615] [INFO] Using worker: sync
+[2017-06-19 22:16:51 +0000] [1620] [INFO] Booting worker with pid: 1620
+[2017-06-19 22:17:00 +0000] [1615] [INFO] Handling signal: int
+[2017-06-19 22:17:00 +0000] [1620] [INFO] Worker exiting (pid: 1620)
+[2017-06-19 22:17:00 +0000] [1615] [INFO] Shutting down: Master
+[2017-06-19 22:17:19 +0000] [1634] [INFO] Starting gunicorn 19.4.3
+[2017-06-19 22:17:19 +0000] [1634] [INFO] Listening at: http://127.0.0.1:8000 (1634)
+[2017-06-19 22:17:19 +0000] [1634] [INFO] Using worker: sync
+[2017-06-19 22:17:19 +0000] [1639] [INFO] Booting worker with pid: 1639
+[2017-06-19 22:17:22 +0000] [1634] [INFO] Handling signal: int
+[2017-06-19 22:17:22 +0000] [1639] [INFO] Worker exiting (pid: 1639)
+[2017-06-19 22:17:22 +0000] [1634] [INFO] Shutting down: Master
