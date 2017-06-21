@@ -27,7 +27,7 @@ def read_excel(file):
         return excelData
     except:
         xl = openpyxl.load_workbook(file)
-        sheet = xl.get_sheet_by_name('Query1')
+        sheet = xl.get_sheet_by_name('Sheet1')
         sheetpass = pd.DataFrame()
         sheetpass = pd.read_excel(file)
         excelData = sheetpass
@@ -245,7 +245,7 @@ def to_percent(val, digits):
 
 def get_type(parcelnumber):
     print "BEFOR XCEL"
-    sys.stdout.flush()
+    #sys.stdout.flush()
     table1 = read_excel(os.path.join(APP_STATIC, 'Copy of MASTER INCOME DATA.xlsx'))
     print "AFTER XCEL"
     sys.stdout.flush()
@@ -311,6 +311,9 @@ def get_str_revenue(row):
         else:
             #info2.append(word.name + ": " + u[start:end])
             k = tuple(word.name, u[start:end])
+        print "K VALUE vvvvvvvvv"
+        print k.value
+        sys.stdout.flush()
         #print k.value[len(k.value)-1]
         if k.value[len(k.value)-1] == ".":
             k.value = k.value[0:len(k.value)-1]
