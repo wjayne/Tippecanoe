@@ -80,7 +80,7 @@ def get_info(row):
     info.append(row['City'])
     info.append(row['ZIP'])
     info.append(row['Year_Built'])
-    info.append(row['Amenities (5=best 1=worst)'])
+    #info.append(row['Amenities (5=best 1=worst)'])
     # info.append(row['Appeal (5=best 1=worst)'])
     info.append(row['Franchise'])
     for word in info:
@@ -100,7 +100,7 @@ def get_info(row):
         if 'nan' not in k.value:
             info2.append(k)
         else:
-            k.value = 'MISSING'
+            k.value = 'N/A'
             info2.append(k)
 
     return info2
@@ -129,9 +129,17 @@ def get_revenue(row):
         if start == 0:
             #info2.append(word.name + ": " + u[start+1:len(u)-1] )
             k = tuple(word.name, u[start+1:len(u)-1])
+            if word.name == 'PGI':
+                k = tuple('Potential Gross Income', u[start+1:len(u)-1])
+            elif word.name == 'EGI':
+                k = tuple('Estimated Gross Income', u[start+1:len(u)-1])
         else:
             #info2.append(word.name + ": " + u[start:end])
             k = tuple(word.name, u[start:end])
+            if word.name == 'PGI':
+                k = tuple('Potential Gross Income', u[start+1:len(u)-1])
+            elif word.name == 'EGI':
+                k = tuple('Estimated Gross Income', u[start+1:len(u)-1])
         #print k.value[len(k.value)-1]
         if k.value[len(k.value)-1] == ".":
             k.value = k.value[0:len(k.value)-1]
@@ -169,7 +177,7 @@ def get_expenses(row):
             k.value = str(to_percent(float(k.value), 2))
             expenses2.append(k)
         else:
-            k.value = 'MISSING'
+            k.value = 'N/A'
             expenses2.append(k)
 
     return expenses2
@@ -204,7 +212,7 @@ def get_cap_rate(row):
             k.value = str(to_percent(float(k.value), 2))
             cap_rate2.append(k)
         else:
-            k.value = 'MISSING'
+            k.value = 'N/A'
             cap_rate2.append(k)
 
     return cap_rate2
@@ -226,16 +234,20 @@ def get_results(row):
         if start == 0:
             #info2.append(word.name + ": " + u[start+1:len(u)-1] )
             k = tuple(word.name, u[start+1:len(u)-1])
+            if word.name == 'Pers_Prop':
+                k = tuple('Personal Property Allocation', u[start+1:len(u)-1])
         else:
             #info2.append(word.name + ": " + u[start:end])
             k = tuple(word.name, u[start:end])
+            if word.name == 'Pers_Prop':
+                k = tuple('Personal Property Allocation', u[start+1:len(u)-1])
         #print k.value
         if k.value != "nan" and k.value != ' nan' and 'nan' not in k.value:
             if k.column != 'Notes':
                 k.value = locale.currency(float(k.value), grouping=True)
             result2.append(k)
         else:
-            k.value = 'MISSING'
+            k.value = 'N/A'
             result2.append(k)
     return result2
 
@@ -267,7 +279,7 @@ def get_golf_info(row):
     info.append(row['City'])
     info.append(row['ZIP'])
     info.append(row['Year_Built'])
-    info.append(row['Appeal (5=best 1=worst)'])
+    #info.append(row['Appeal (5=best 1=worst)'])
     #CLEANING UP EDIT:WILL
     for word in info:
         if str(word.dtype) == 'float64':
@@ -285,7 +297,7 @@ def get_golf_info(row):
         if 'nan' not in k.value or len(k.value) > 5:
             info2.append(k)
         else:
-            k.value = 'MISSING'
+            k.value = 'N/A'
             info2.append(k)
     return info2
 
@@ -297,7 +309,7 @@ def get_str_revenue(row):
     revenue.append(row['Retail_Rent'])
     revenue.append(row['PGI'])
     revenue.append(row['Vacancy'])
-    revenue.append(row['PGI'])
+    #revenue.append(row['PGI'])
     revenue.append(row['EGI'])
     for word in revenue:
         if str(word.dtype) == 'float64':
@@ -308,11 +320,17 @@ def get_str_revenue(row):
         if start == 0:
             #info2.append(word.name + ": " + u[start+1:len(u)-1] )
             k = tuple(word.name, u[start+1:len(u)-1])
+            if word.name == 'PGI':
+                k = tuple('Potential Gross Income', u[start+1:len(u)-1])
+            elif word.name == 'EGI':
+                k = tuple('Estimated Gross Income', u[start+1:len(u)-1])
         else:
             #info2.append(word.name + ": " + u[start:end])
             k = tuple(word.name, u[start:end])
-        print "K VALUE vvvvvvvvv"
-        print k.value
+            if word.name == 'PGI':
+                k = tuple('Potential Gross Income', u[start+1:len(u)-1])
+            elif word.name == 'EGI':
+                k = tuple('Estimated Gross Income', u[start+1:len(u)-1])
         sys.stdout.flush()
         #print k.value[len(k.value)-1]
         if k.value[len(k.value)-1] == ".":
@@ -324,7 +342,7 @@ def get_str_revenue(row):
             k.value = locale.currency(float(k.value), grouping=True)
             revenue2.append(k)
         else:
-            k.value = 'MISSING'
+            k.value = 'N/A'
             revenue2.append(k)
     return revenue2
 
@@ -352,7 +370,7 @@ def get_str_expenses(row):
             k.value = locale.currency(float(k.value), 2)
             expenses2.append(k)
         else:
-            k.value = 'MISSING'
+            k.value = 'N/A'
             expenses2.append(k)
     return expenses2
 
@@ -373,9 +391,13 @@ def get_str_results(row):
         if start == 0:
             #info2.append(word.name + ": " + u[start+1:len(u)-1] )
             k = tuple(word.name, u[start+1:len(u)-1])
+            if word.name == 'Pers_Prop':
+                k = tuple('Personal Property Allocation', u[start+1:len(u)-1])
         else:
             #info2.append(word.name + ": " + u[start:end])
             k = tuple(word.name, u[start:end])
+            if word.name == 'Pers_Prop':
+                k = tuple('Personal Property Allocation', u[start+1:len(u)-1])
         if "$" not in k.value:
             try:
                 k.value = locale.currency(float(k.value), grouping=True)
@@ -384,7 +406,7 @@ def get_str_results(row):
         if 'nan' not in k.value:        
             result2.append(k)
         else:
-            k.value = 'MISSING'
+            k.value = 'N/A'
             result2.append(k)
     return result2
 
@@ -411,9 +433,17 @@ def mtr_center_revenue(row):
         if start == 0:
             #info2.append(word.name + ": " + u[start+1:len(u)-1] )
             k = tuple(word.name, u[start+1:len(u)-1])
+            if word.name == 'PGI':
+                k = tuple('Potential Gross Income', u[start+1:len(u)-1])
+            elif word.name == 'EGI':
+                k = tuple('Estimated Gross Income', u[start+1:len(u)-1])
         else:
             #info2.append(word.name + ": " + u[start:end])
             k = tuple(word.name, u[start:end])
+            if word.name == 'PGI':
+                k = tuple('Potential Gross Income', u[start+1:len(u)-1])
+            elif word.name == 'EGI':
+                k = tuple('Estimated Gross Income', u[start+1:len(u)-1])
         #print k.value[len(k.value)-1]
         if k.value[len(k.value)-1] == ".":
             k.value = k.value[0:len(k.value)-1]
@@ -425,7 +455,7 @@ def mtr_center_revenue(row):
         if 'nan' not in k.value:
             revenue2.append(k)
         else:
-            k.value = 'MISSING'
+            k.value = 'N/A'
             revenue.append(k)
     return revenue2
 
@@ -436,7 +466,7 @@ def get_storage_revenue(row):
     revenue.append(row['Storage Rent'])
     revenue.append(row['PGI'])
     revenue.append(row['Vacancy'])
-    revenue.append(row['PGI'])
+    #revenue.append(row['PGI'])
     revenue.append(row['EGI'])
     for word in revenue:
         if str(word.dtype) == 'float64':
@@ -447,9 +477,17 @@ def get_storage_revenue(row):
         if start == 0:
             #info2.append(word.name + ": " + u[start+1:len(u)-1] )
             k = tuple(word.name, u[start+1:len(u)-1])
+            if word.name == 'PGI':
+                k = tuple('Potential Gross Income', u[start+1:len(u)-1])
+            elif word.name == 'EGI':
+                k = tuple('Estimated Gross Income', u[start+1:len(u)-1])
         else:
             #info2.append(word.name + ": " + u[start:end])
             k = tuple(word.name, u[start:end])
+            if word.name == 'PGI':
+                k = tuple('Potential Gross Income', u[start+1:len(u)-1])
+            elif word.name == 'EGI':
+                k = tuple('Estimated Gross Income', u[start+1:len(u)-1])
         #print k.value[len(k.value)-1]
         if k.value[len(k.value)-1] == ".":
             k.value = k.value[0:len(k.value)-1]
@@ -461,7 +499,7 @@ def get_storage_revenue(row):
         if 'nan' not in k.value:
             revenue2.append(k)
         else:
-            k.value = 'MISSING'
+            k.value = 'N/A'
             revenue2.append(k)
         return revenue2
 
@@ -492,7 +530,7 @@ def get_storage_expenses(row):
             k.value = locale.currency(float(k.value), grouping=True)
             expenses2.append(k)
         else:
-            k.value = 'MISSING'
+            k.value = 'N/A'
             expenses2.append(k)
     return expenses2
 
@@ -521,7 +559,7 @@ def get_office_expenses(row):
             k.value = locale.currency(float(k.value), grouping=True)
             expenses2.append(k)
         else:
-            k.value = 'MISSING'
+            k.value = 'N/A'
             expenses2.append(k)
     return expenses2
 
@@ -544,9 +582,17 @@ def get_multi_family_revenue(row):
         if start == 0:
             #info2.append(word.name + ": " + u[start+1:len(u)-1] )
             k = tuple(word.name, u[start+1:len(u)-1])
+            if word.name == 'PGI':
+                k = tuple('Potential Gross Income', u[start+1:len(u)-1])
+            elif word.name == 'EGI':
+                k = tuple('Estimated Gross Income', u[start+1:len(u)-1])
         else:
             #info2.append(word.name + ": " + u[start:end])
             k = tuple(word.name, u[start:end])
+            if word.name == 'PGI':
+                k = tuple('Potential Gross Income', u[start+1:len(u)-1])
+            elif word.name == 'EGI':
+                k = tuple('Estimated Gross Income', u[start+1:len(u)-1])
         #print k.value[len(k.value)-1]
         if k.value[len(k.value)-1] == ".":
             k.value = k.value[0:len(k.value)-1]
@@ -558,7 +604,7 @@ def get_multi_family_revenue(row):
         if 'nan' not in k.value:
             revenue2.append(k)
         else:
-            k.value = 'MISSING'
+            k.value = 'N/A'
             revenue2.append(k)
         return revenue2
 
@@ -587,7 +633,7 @@ def get_mf_expenses(row):
             k.value = locale.currency(float(k.value), grouping=True)
             expenses2.append(k)
         else:
-            k.value = 'MISSING'
+            k.value = 'N/A'
             expenses2.append(k)
     return expenses2
 
@@ -608,15 +654,20 @@ def get_mf_results(row):
         if start == 0:
             #info2.append(word.name + ": " + u[start+1:len(u)-1] )
             k = tuple(word.name, u[start+1:len(u)-1])
+            if word.name == 'Pers_Prop':
+                k = tuple('Personal Property Allocation', u[start+1:len(u)-1])
         else:
             #info2.append(word.name + ": " + u[start:end])
             k = tuple(word.name, u[start:end])
+            if word.name == 'Pers_Prop':
+                k = tuple('Personal Property Allocation', u[start+1:len(u)-1])
 
-        if 'nan' not in k.value:
-            k.value = k.value
+        if k.value != "nan" and k.value != ' nan' and 'nan' not in k.value:
+            if k.column != 'Notes':
+                k.value = locale.currency(float(k.value), grouping=True)
             result2.append(k)
         else:
-            k.value = 'MISSING'
+            k.value = 'N/A'
             result2.append(k)
     return result2
 
@@ -643,9 +694,17 @@ def get_shop_revenue(row):
         if start == 0:
             #info2.append(word.name + ": " + u[start+1:len(u)-1] )
             k = tuple(word.name, u[start+1:len(u)-1])
+            if word.name == 'PGI':
+                k = tuple('Potential Gross Income', u[start+1:len(u)-1])
+            elif word.name == 'EGI':
+                k = tuple('Estimated Gross Income', u[start+1:len(u)-1])
         else:
             #info2.append(word.name + ": " + u[start:end])
             k = tuple(word.name, u[start:end])
+            if word.name == 'PGI':
+                k = tuple('Potential Gross Income', u[start+1:len(u)-1])
+            elif word.name == 'EGI':
+                k = tuple('Estimated Gross Income', u[start+1:len(u)-1])
         #print k.value[len(k.value)-1]
         if k.value[len(k.value)-1] == ".":
             k.value = k.value[0:len(k.value)-1]
@@ -657,7 +716,7 @@ def get_shop_revenue(row):
         if 'nan' not in k.value:
             revenue2.append(k)
         else:
-            k.value = 'MISSING'
+            k.value = 'N/A'
             revenue2.append(k)
         return revenue2
 
@@ -685,7 +744,7 @@ def get_shop_expenses(row):
             k.value = str(to_percent(float(k.value), 2))
             expenses2.append(k)
         else:
-            k.value = 'MISSING'
+            k.value = 'N/A'
             expenses2.append(k)   
     return expenses2
 
@@ -713,7 +772,7 @@ def get_mfg_expenses(row):
             k.value = str(to_percent(float(k.value), 2))
             expenses2.append(k)
         else:
-            k.value = 'MISSING'
+            k.value = 'N/A'
             expenses2.append(k)
     return expenses2
 

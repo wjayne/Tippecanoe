@@ -1,4 +1,4 @@
-<!--Single tenant retail-->
+Net Operating Income<!--Single tenant retail-->
 {% extends "layout.html" %}
 {% block content %}
 <h1> Multi Tenant Retail </h1>
@@ -7,7 +7,7 @@
 									<table border="1">
 									{% for attr in info %}
 									<tr>
-										<td id="col1"> {{ attr.column }} </td>
+										<td id="col1"> {{ attr.column.replace("_", " ") }} </td>
 										<td> {{ attr.value }} </td>
 									</tr>
 									{% endfor %}
@@ -18,7 +18,7 @@
 			      			<table border="1">
 			      			{% for attr in revenue %}
 			      			<tr>
-			      				<td id="col1"> {{ attr.column }} </td>
+			      				<td id="col1"> {{ attr.column.replace("_", " ") }} </td>
 			      				<td> {{ attr.value }} </td>
 			      			</tr>
 			      			{% endfor %}
@@ -29,17 +29,17 @@
 			      			<table border="1">
 			      			{% for attr in expenses %}
 			      			<tr>
-			      				<td id="col1"> {{ attr.column }} </td>
+			      				<td id="col1"> {{ attr.column.replace("_", " ") }} </td>
 			      				<td> {{ attr.value }} </td>
 			      			</tr>
 			      			{% endfor %}
 			      			</table></div>
 						<br></div>
 
-     <div class="col-md-6 col-lg-6"><div class="col-md-12 col-lg-12"> <h3>NOI</h3>
+     <div class="col-md-6 col-lg-6"><div class="col-md-12 col-lg-12"> <h3>Net Operating Income</h3>
                 <table border="1">
                   <tr>
-                    <td id="col1">NOI</td>
+                    <td id="col1">Net Operating Income</td>
                     <td>{{ NOI }}</td>
                   </tr>
                 </table></div>
@@ -48,7 +48,7 @@
                  <table border="1">
                  {% for attr in cap_rate %}
                  <tr>
-                   <td id="col1"> {{ attr.column }} </td>
+                   <td id="col1"> {{ attr.column.replace("_", " ") }} </td>
                    <td> {{ attr.value }} </td>
                  </tr>
                  {% endfor %}
@@ -58,7 +58,7 @@
            			<table border="1">
            			{% for attr in result %}
            			<tr>
-           				<td id="col1"> {{ attr.column }} </td>
+           				<td id="col1"> {{ attr.column.replace("_", " ") }} </td>
            				<td> {{ attr.value }} </td>
            			</tr>
            			{% endfor %}
