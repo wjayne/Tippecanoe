@@ -5,7 +5,7 @@
         <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='temp.css') }}"> -->
-        <link rel="stylesheet" type="text/css" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/static/bootstrap-3.3.7-dist/css/bootstrap.css">
         <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -14,7 +14,7 @@
 	</head>
 	<body>
 		<div class="output" style="text-align: center; height: 100%;">
-			<a href="/"><button>Home</button></a>
+			<div class="hide-print"><a href="/"><button>Home</button></a></div>
             <br>
 			{% block content %} {% endblock %}
             <br>

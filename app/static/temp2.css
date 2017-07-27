@@ -64,7 +64,7 @@ h3{
 		padding-left: 3px;
 		color: black; 
 		font-size: 12px;
-		border: 1px double black;
+		border: 1px solid black;
 	}
 
 	h3{
@@ -83,37 +83,29 @@ h3{
 
 	table{
 		border: 1px double black;
+		padding: 0px;
 	}
 
 	body{
 		margin: 1cm 1cm 1cm 1cm;
+		width: 100%;
+		height: 100%;
 	}
 
 	html{
-		margin: 1cm 1cm 1cm 1cm;
+		margin-top: -130px;
+		margin-left: -15px;
+		padding: 0px; 
+		overflow: visible;
 	}
 
-	.contentWill{
-		clear: left;
-		margin: 0cm 0cm 0cm 0cm;
+	.output{
+		width: 100%;
+		height: 100%;
 	}
 
-	.leftWill{
-		float: left;
-		text-align: center;
-		margin: 0cm 0cm 0cm 0cm;
+	div.col-md-12.col-lg-12{
+		page-break-inside: avoid;
 	}
-
-	.rightWill{
-		float: right;
-		text-align: center;
-		margin: 0cm 0cm 0cm 0cm;
-	}
-
 
 }
-
-@page{
-		margin: 0.5cm;
-		overflow-y: hidden;
-	}
